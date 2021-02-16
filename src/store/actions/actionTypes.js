@@ -1,0 +1,3 @@
+export const USER_TEST_ACTION = 'USER_TEST_ACTION';
+
+export const WORD_TEST_ACTION = 'WORD_TEST_ACTION';

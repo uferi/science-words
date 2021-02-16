@@ -4,9 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import {createStore, combineReducers} from 'redux';
+import {Provider} from 'react-redux';
+import userReducer from './store/reducers/userReducer';
+import wordsReducer from './store/reducers/wordsReducer';
+
+const rootReducer = combineReducers({
+  user: userReducer,
+  words: wordsReducer
+})
+
+const store = createStore(rootReducer);
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

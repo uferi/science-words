@@ -1,0 +1,26 @@
+.NavItem {
+    /* outline: 1px solid orange; */
+    margin: 10px 0;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    /* background-color:rgb(38, 65, 65); */
+}
+
+.NavItem a {
+    /* outline: 1px solid red; */
+    border: none;
+    border-radius: 11px;
+    margin: 5px;
+    padding: 5px 15px;
+    text-decoration: none;
+    color: #ccc;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+}
+
+.NavItem a:hover {
+    border-bottom: 1px solid #ccc;
+}

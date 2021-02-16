@@ -1,0 +1,35 @@
+.UserProfile {
+    width: 200px;
+    margin-top: 50px;
+    padding: 10px;
+    color: rgb(98, 173, 192);
+    background-color: rgb(33, 56, 56);
+    border: 2px solid rgb(45, 130, 149);
+    border-radius: 6px;
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.NickName {
+    /* outline: 1px solid red; */
+    width: 80%;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.FullName {
+    /* outline: 1px solid red; */
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.Stat {
+    /* outline: 1px solid red; */
+}

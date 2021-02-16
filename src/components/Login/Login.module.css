@@ -10,8 +10,9 @@
 
 .Login h3 {
     /* outline: 1px solid red; */
-    width: 40%;
-    text-align: center;
+    /* box-sizing: border-box; */
+    width: 90%;
+    text-align: left;
     color: rgb(98, 173, 192);
     font-size: 1.3em;
     font-weight: 400;
