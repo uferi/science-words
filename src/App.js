@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 // import logo from './logo.svg';
 import classes from './App.module.css';
 
-import Login from './components/Login/Login';
+// import Login from './components/Login/Login';
 import Layout from './hoc/Layout/Layout';
-import UserProfile from './components/UserProfile/UserProfile';
+// import UserProfile from './components/UserProfile/UserProfile';
+import Toplist from './containers/Toplist/Toplist';
 
 class App extends Component {
   
@@ -13,8 +14,9 @@ class App extends Component {
       <div className={classes.App}>
         <Layout>
           {/* <h2>This is the App</h2> */}
-          <UserProfile />
-          <Login />
+          {/* <UserProfile /> */}
+          {/* <Login /> */}
+          <Toplist />
         </Layout>
       </div>
     );
