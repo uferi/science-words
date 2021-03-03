@@ -1,3 +1,13 @@
 export const USER_TEST_ACTION = 'USER_TEST_ACTION';
+export const USER_INIT_PROFILE = 'USER_INIT_PROFILE';
 
 export const WORD_TEST_ACTION = 'WORD_TEST_ACTION';
+
+export const AUTH_USER = 'AUTH_USER';
+export const AUTH_SIGN_UP = 'AUTH_SIGN_UP';
+export const AUTH_SIGN_IN = 'AUTH_SIGN_IN';
+export const AUTH_START = 'AUTH_START';
+export const AUTH_SIGNUP_SUCCESS = 'AUTH_SIGNUP_SUCCESS';
+export const AUTH_SIGNUP_FAIL = 'AUTH_SIGNUP_FAIL';
+export const AUTH_SUCCESS = 'AUTH_SUCCESS';
+export const AUTH_FAIL = 'AUTH_FAIL';

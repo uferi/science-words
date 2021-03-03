@@ -1,0 +1,103 @@
+import React, {Component} from 'react';
+import {NavLink} from 'react-router-dom';
+import {connect} from 'react-redux';
+
+import classes from './Login.module.css';
+
+import * as actions from '../../store/actions/index';
+
+class Login extends Component {
+    state = {
+        nickName: '',
+        email: '',
+        password: '',
+        isSignup: false
+    }
+
+    onEmailChangedHandler = (event) => {
+        const newEmail = event.target.value;
+        this.setState({
+            email: newEmail
+        });
+    }
+
+    onPasswordChangedHandler = (event) => {
+        const newPassword = event.target.value;
+        this.setState({
+            password: newPassword
+        });
+    }
+
+    onSignInHandler = () => {
+        this.props.onAuth(
+            {
+                email: this.state.email,
+                password: this.state.password,
+                isSignup: this.state.isSignup,
+                nickName: this.state.nickName,
+                history: this.props.history
+            }
+        )
+    }
+
+
+    render() {
+
+        // this.props.onTestUserAction('Yay! I managed to send a message through redux to dispatch it with actions!');
+
+        const spinner = (
+            <div>
+                <p>Loading</p>
+                {/* <i className="fa fa-spinner fa-spin" aria-hidden="true"></i> */}
+                <i className="fa fa-cog fa-spin" aria-hidden="true"></i>
+            </div>
+        )
+
+        return (
+            <div className={classes.Login}>
+                <div className={classes.Title}>
+                    <h3>Please Sign In!</h3>
+                    {this.props.isLoading ? spinner : null}
+                </div>
+                <div>
+                    <label>email:</label>
+                    <input 
+                        className={classes.UsernameInput} 
+                        type="email" 
+                        onChange={this.onEmailChangedHandler}
+                        value={this.state.email}
+                    />
+                </div>
+                <div>
+                    <label>password:</label>
+                    <input 
+                        className={classes.PasswordInput} 
+                        type="password" 
+                        onChange={this.onPasswordChangedHandler}
+                        value={this.state.password}
+                    />
+                </div>
+                <button className={classes.Button} onClick={this.onSignInHandler}>Sign In</button>
+                <div>
+                    <p>Don't have an account yet?</p>
+                    {/* <a href="#" >Register now</a> */}
+                    <NavLink to="/register">Register now</NavLink>
+                </div>
+            </div>
+        );
+    }
+}
+
+const mapStateToProps = state => {
+    return {
+        nickName: state.user.nickName,
+        isLoading: state.auth.isLoading
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onAuth: (data) => dispatch(actions.auth(data))
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Login);

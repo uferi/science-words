@@ -1,20 +1,30 @@
 .NavItem {
     /* outline: 1px solid orange; */
-    margin: 10px 0;
-    padding: 10px 0;
+    /* margin: 10px 0; */
+    /* padding: 10px 0; */
     display: flex;
     align-items: center;
+    justify-content: center;
     box-sizing: border-box;
+    width: 100px;
     height: 100%;
     /* background-color:rgb(38, 65, 65); */
 }
 
+.NavLink {
+    /* outline: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .NavItem a {
     /* outline: 1px solid red; */
+    height: 35px;
     border: none;
-    border-radius: 11px;
-    margin: 5px;
-    padding: 5px 15px;
+    border-radius: 5px;
+    /* margin: 5px; */
+    padding: 0px 15px;
     text-decoration: none;
     color: #ccc;
     font-weight: 600;
@@ -22,5 +32,14 @@
 }
 
 .NavItem a:hover {
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
+    color: black;
+    /* background-color: hsl(190, 40%, 60%); */
+    background-color: rgb(107, 185, 204);
+}
+
+.NavItem .Active {
+    color: black;
+    /* background-color: hsl(190, 30%, 45%); */
+    background-color: rgb(61, 144, 165);
 }

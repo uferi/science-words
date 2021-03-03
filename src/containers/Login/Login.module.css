@@ -8,15 +8,39 @@
     background-color: rgb(33, 56, 56);
 }
 
+.Login .Title {
+    /* outline: 1px solid red; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: rgb(98, 173, 192);
+}
+
+.Login .Title p {
+    /* outline: 1px solid red; */
+    /* color: rgb(98, 173, 192); */
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+.Login .Title i {
+    /* outline: 1px solid red; */
+    /* color: rgb(98, 173, 192); */
+    font-size: 40px;
+    position: relative;
+    top: 8px;
+}
+
 .Login h3 {
     /* outline: 1px solid red; */
     /* box-sizing: border-box; */
-    width: 90%;
+    /* width: 90%; */
     text-align: left;
-    color: rgb(98, 173, 192);
     font-size: 1.3em;
     font-weight: 400;
     margin-left: 13px;
+    padding-left: 5px;
+    padding-right: 40px;
     /* border: 2px solid rgb(45, 130, 149); */
 }
 
@@ -34,26 +58,29 @@
 .Login input {
     display: inline-block;
     /* outline: 1px solid red; */
-    background-color: rgb(192, 209, 226);
+    background-color: hsl(200, 30%, 60%);
     line-height: 1.6;
     /* letter-spacing: 0.75px; */
     font-size: 1.1em;
-    width: 90%;
+    padding: 3px 10px;
+    width: 85%;
+    border: none;
     border-radius: 4px;
     margin-bottom: 10px;
-    /* outline-color: rgb(189, 69, 22); */
-    /* outline-width: 0.1px; */
-    /* outline: 0.1px solid #fff; */
     outline: none ;
     box-shadow: none;
+}
+
+.Login input:focus {
+    background-color: hsl(210, 25%, 70%);
 }
 
 .Button {
     width: 90%;
     font-size: 1em;
     font-weight: bold;
-    padding: 3px;
-    margin: 15px 0 10px 0;
+    padding: 8px 3px;
+    margin: 25px 0 10px 0;
     border-radius: 6px;
     border-color: rgb(61, 144, 165);
     background-color: rgb(61, 144, 165);
