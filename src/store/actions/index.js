@@ -13,3 +13,17 @@ export {
     authSuccess,
     authFail
 } from './authActions';
+
+export {
+    fetchUserProfiles,
+    fetchUserProfilesStart,
+    fetchUserProfilesSuccess,
+    fetchUserProfilesFail,
+    fetchWeeklyStat,
+    fetchWeeklyStatStart,
+    fetchWeeklyStatSuccess,
+    fetchWeeklyStatFail,
+    displayWeekIncrement,
+    displayWeekDecrement,
+    displayWeekToCurrent
+} from './statActions';

@@ -12,13 +12,15 @@ import {BrowserRouter} from "react-router-dom";
 import userReducer from './store/reducers/userReducer';
 import wordsReducer from './store/reducers/wordsReducer';
 import authReducer from './store/reducers/authReducer';
+import statReducer from './store/reducers/statReducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
   user: userReducer,
   words: wordsReducer,
-  auth: authReducer
+  auth: authReducer,
+  stat: statReducer
 })
 
 const store = createStore(

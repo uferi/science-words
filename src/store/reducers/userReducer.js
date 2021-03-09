@@ -1,15 +1,15 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-    id: '',
-    nickName: 'Lau',
-    firstName: 'Laura',
-    lastName: 'Ugrai',
-    password: 'unicorn',
-    type: 'student',            // student, teacher, admin
-    statAnswersGood: 42,
-    statAnswersAll: 50,
-    statTimePracticed: 150       // measured in seconds
+    localId: '',
+    displayName: '',
+    email: '',
+    // firstName: '',
+    // lastName: '',
+    // type: 'student',            // student, teacher, admin
+    goodAnswers: 0,
+    allAnswers: 0,
+    timeSpent: 0,       // measured in seconds
 }
 
 const userInitProfile = (state, action) => {
@@ -18,7 +18,7 @@ const userInitProfile = (state, action) => {
     }
 }
 
-const reducer = ( state=initialState, action ) => {
+const userReducer = ( state=initialState, action ) => {
     switch (action.type){
         case actionTypes.USER_TEST_ACTION:
             console.log('[USER_TEST_ACTION] - dispatched successfully - message: ', action.message);
@@ -31,4 +31,4 @@ const reducer = ( state=initialState, action ) => {
     }
 }
 
-export default reducer;
+export default userReducer;

@@ -1,0 +1,103 @@
+.MainPage {
+    display: flex;
+    flex-direction: column;
+}
+
+.Section {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid rgb(33, 56, 56); */
+    /* outline: 2px solid rgb(33, 56, 56); */
+    background-color: hsl(180, 26%, 21%);
+    border-radius: 15px 15px 5px 5px;
+    height: calc(50vh - 80px);
+    min-height: 200px;
+    width: auto;
+    margin: 10px;
+    /* padding-bottom: 10px; */
+}
+
+.SectionOverall {
+    display: flex;
+    flex-direction: column;
+    /* outline: 1px solid orange; */
+    height: calc(50vh - 40px);
+    min-height: 160px;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.SectionWeekly {
+    display: flex;
+    flex-direction: column;
+    /* outline: 1px solid orange; */
+    height: calc(50vh - 40px);
+    min-height: 160px;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.Toplists {
+    /* outline: 1px solid red; */
+    display: flex;
+    /* height: 100%; */
+    height: calc(50vh - 90px);
+    margin: 5px;
+}
+
+.Title {
+    /* outline: 1px solid green; */
+    box-sizing: border-box;
+    color: rgb(98, 173, 192);
+    background-color: rgb(33, 56, 56);
+    border-radius: 15px 15px 0 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    /* margin-top: 5px; */
+    padding: 5px;
+    width: 100%;
+}
+
+.HeaderWeekly {
+    /* outline: 1px solid green; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    color: rgb(98, 173, 192);
+    background-color: rgb(33, 56, 56);
+    border-radius: 15px 15px 0 0;
+    font-size: 20px;
+    font-weight: bold;
+    /* text-align: center; */
+    /* margin-top: 5px; */
+    padding: 5px;
+    width: 100%;
+}
+
+.TitleWeekly {
+    /* outline: 1px solid darkgoldenrod; */
+    padding-right: 0px;
+}
+
+.WeekPicker {
+    /* outline: 1px solid green; */
+    display: flex;
+    margin-left: 20px;
+}
+
+.WeekPicker i {
+    /* outline: 1px solid red; */
+    padding: 5px 15px 0px 15px;
+    /* color: hsl(180, 26%, 12%); */
+    color: hsl(192, 43%, 30%);
+}
+
+.WeekPicker i:hover {
+    color: rgb(98, 173, 192);
+}
+
+.WeekPicker i:active {
+    /* color: hsl(192, 43%, 70%); */
+    color: hsl(81, 42%, 70%);
+}

@@ -14,6 +14,15 @@ class Login extends Component {
         isSignup: false
     }
 
+    componentDidMount(){
+        this.setState(
+            {
+                email: 'baboca@baboca.com',
+                password: 'baboca4242',
+            }
+        )
+    }
+
     onEmailChangedHandler = (event) => {
         const newEmail = event.target.value;
         this.setState({
@@ -38,12 +47,23 @@ class Login extends Component {
                 history: this.props.history
             }
         )
+        // this.props.fetchUserProfiles();
     }
 
 
     render() {
 
         // this.props.onTestUserAction('Yay! I managed to send a message through redux to dispatch it with actions!');
+
+        // const actualYear = new Date().getFullYear().toString();
+        // const actualWeek = Math.floor((((new Date().getTime())-new Date(new Date().getFullYear(), 0, 1).getTime())/1000/60/60/24/7)+1).toString().padStart(2,'0');
+        // const thisWeek = actualYear + '-' + actualWeek;
+        // const prevWeek = thisWeek.split('-')[0]+'-'+(+thisWeek.split('-')[1]-1).toString().padStart(2,'0');
+        // console.log(thisWeek);
+        // console.log(prevWeek);
+
+        // const thisWeek = (new Date().getFullYear().toString()) + '-' + (Math.floor((((new Date().getTime())-new Date(new Date().getFullYear(), 0, 1).getTime())/1000/60/60/24/7)+1).toString().padStart(2,'0'));
+        
 
         const spinner = (
             <div>
@@ -97,7 +117,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAuth: (data) => dispatch(actions.auth(data))
+        onAuth: (data) => dispatch(actions.auth(data)),
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Login);

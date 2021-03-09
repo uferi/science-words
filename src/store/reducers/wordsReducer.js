@@ -7,7 +7,7 @@ const initialState = {
                     {wordId: 2, eng: 'table', hun: 'asztal'} ],
 }
 
-const reducer = ( state=initialState, action ) => {
+const wordsReducer = ( state=initialState, action ) => {
     switch (action.type){
         case actionTypes.WORD_TEST_ACTION:
             return state;
@@ -16,4 +16,4 @@ const reducer = ( state=initialState, action ) => {
     }
 }
 
-export default reducer;
+export default wordsReducer;

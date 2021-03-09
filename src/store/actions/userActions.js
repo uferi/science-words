@@ -12,14 +12,14 @@ export const userInitProfile = (profileData) => {
     return dispatch => {
         
         const baseUrl = 'https://science-words-default-rtdb.firebaseio.com';
-        const url = `${baseUrl}/userprofiles/${profileData.localId}.json`;
+        const url = `${baseUrl}/user-profiles/${profileData.localId}.json`;
 
         axios.put(url,profileData)
             .then( response => {
-                console.log(response);
+                // console.log(response);
             })
             .catch( error => {
-                console.log(error);
+                // console.log(error);
             })
 
     }

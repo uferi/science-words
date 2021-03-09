@@ -61,65 +61,8 @@ const authFail = (state, action) => {
     }
 }
 
-const authUser = (email, password, isSignup, nickName) => {
-    // Web API Key AIzaSyDDca137usYug1VKuQ59J6keqheUOeJCrI
-
-    // dispatch(actions.authStart());
-
-    let token = null
-    const authData = {
-            email: email,
-            password: password,
-            returnSecureToken: true
-        }
-    
-    if(isSignup){
-        axios.post( 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDDca137usYug1VKuQ59J6keqheUOeJCrI', authData)
-        .then(response => {
-            token = response.data.idToken;
-            
-            const userData = {
-                idToken : token,
-                displayName: nickName,
-                returnSecureToken: true
-            }
-    
-            axios.post( 'https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyDDca137usYug1VKuQ59J6keqheUOeJCrI', userData)
-            .then( response => {
-                console.log(response);
-            })
-            .catch( error => {
-                console.log(error);
-            })
-
-        })
-        .catch(error => {
-            console.log(error);
-        })
-    } else {
-        const authData = {
-            email: email,
-            password: password,
-            returnSecureToken: true
-        }
-
-        axios.post( 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDDca137usYug1VKuQ59J6keqheUOeJCrI', authData)
-        .then(response => {
-            console.log(response);
-        })
-        .catch(error => {
-            console.log(error);
-        })
-
-    }
-}
-
-
-const reducer = ( state=initialState, action ) => {
+const authReducer = ( state=initialState, action ) => {
     switch (action.type){
-        case actionTypes.AUTH_USER:
-            authUser(action.email, action.password, action.isSignup, action.nickName);
-            return state;
         case actionTypes.AUTH_START:
             return authStart(state,action);
         case actionTypes.AUTH_SIGNUP_SUCCESS:
@@ -135,4 +78,4 @@ const reducer = ( state=initialState, action ) => {
     }
 }
 
-export default reducer;
+export default authReducer;

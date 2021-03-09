@@ -6,14 +6,15 @@ import {connect} from 'react-redux';
 import Login from './containers/Login/Login';
 import Register from './containers/Register/Register';
 import Layout from './hoc/Layout/Layout';
+import MainPage from './containers/MainPage/MainPage';
 // import UserProfile from './components/UserProfile/UserProfile';
 import Toplist from './containers/Toplist/Toplist';
 
 class App extends Component {
-  
+    
   render() {
-
     let routes = null;
+    
     if(!this.props.isAuthenticated){
       routes = (
         <Switch>
@@ -30,7 +31,7 @@ class App extends Component {
           {/* <Route path="/" exact component={Logout} /> */}
           <Route path="/practice" exact render={()=><div>practice</div>} />
           <Route path="/profile" exact render={()=><div>profile</div>} />
-          <Route path="/" exact render={()=><div>Main Page</div>} />
+          <Route path="/" exact component={MainPage} />
           <Redirect to="/" />
         </Switch>
       )      
@@ -48,7 +49,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    isAuthenticated: state.auth.isAuthenticated
+    isAuthenticated: state.auth.isAuthenticated,
+    userProfiles: state.stat.userProfiles
   }
 }
 

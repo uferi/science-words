@@ -1,6 +1,7 @@
 import * as actionTypes from './actionTypes';
 import * as actions from './index';
 import axios from 'axios';
+import { fetchUserProfiles, fetchUserProfilesStart, fetchUserProfilesSuccess } from './statActions';
 
 
 export const authStart = () => {
@@ -23,6 +24,13 @@ export const authSignIn = (data) => {
         axios.post( url, authData)
         .then(response => {
             dispatch(authSuccess(response.data));
+
+            dispatch(actions.fetchUserProfilesStart());
+            dispatch(actions.fetchUserProfiles());
+
+            dispatch(actions.fetchWeeklyStatStart());
+            dispatch(actions.fetchWeeklyStat());
+
             data.history.push('/');
         })
         .catch(error => {
@@ -44,6 +52,9 @@ export const authSignUp = (data) => {
             localId: '',
             displayName: data.nickName,
             email: data.email,
+            goodAnswers: 0,
+            allAnswers: 0,
+            timeSpent: 0
         }
         
         // Web API Key AIzaSyDDca137usYug1VKuQ59J6keqheUOeJCrI
@@ -54,6 +65,7 @@ export const authSignUp = (data) => {
         .then(response => {
             
             profileData.localId = response.data.localId;
+            dispatch(actions.userInitProfile(profileData));
 
             const token = response.data.idToken;
             const userData = {
@@ -65,9 +77,6 @@ export const authSignUp = (data) => {
             axios.post( urlUpdate, userData)
             .then( response => {
                 dispatch(authSignUpSuccess());
-
-                dispatch(actions.userInitProfile(profileData))
-
                 data.history.push('/auth');
             })
             .catch( error => {
