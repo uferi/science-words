@@ -109,7 +109,9 @@ class Toplist extends Component {
                     {this.props.title}
                 </div>
                 <div className={classes.ListArea}>
-                    {this.props.isLoading ? spinner : List}
+                    <div className={classes.ListContainer}>
+                        {this.props.isLoading ? spinner : List}
+                    </div>
                 </div>
                 <div className={classes.Footer}>
                 </div>

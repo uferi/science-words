@@ -95,6 +95,7 @@
 
 .WeekPicker i:hover {
     color: rgb(98, 173, 192);
+    cursor: pointer;
 }
 
 .WeekPicker i:active {

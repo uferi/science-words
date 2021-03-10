@@ -4,7 +4,11 @@ export{
 } from './userActions';
 
 export {
-    wordsTestAction
+    fetchWords,
+    fetchWordsStart,
+    fetchWordsSuccess,
+    fetchWordsFail,
+    setPracticeRange
 } from './wordsActions';
 
 export {

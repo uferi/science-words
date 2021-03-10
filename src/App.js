@@ -7,8 +7,7 @@ import Login from './containers/Login/Login';
 import Register from './containers/Register/Register';
 import Layout from './hoc/Layout/Layout';
 import MainPage from './containers/MainPage/MainPage';
-// import UserProfile from './components/UserProfile/UserProfile';
-import Toplist from './containers/Toplist/Toplist';
+import PracticePage from './containers/PracticePage/PracticePage';
 
 class App extends Component {
     
@@ -29,7 +28,8 @@ class App extends Component {
           {/* <Route path="/auth" exact component={Logout} /> */}
           <Route path="/auth" exact render={()=><div>logout</div>} />
           {/* <Route path="/" exact component={Logout} /> */}
-          <Route path="/practice" exact render={()=><div>practice</div>} />
+          {/* <Route path="/practice" exact render={()=><div>practice</div>} /> */}
+          <Route path="/practice" exact component={PracticePage} />
           <Route path="/profile" exact render={()=><div>profile</div>} />
           <Route path="/" exact component={MainPage} />
           <Redirect to="/" />

@@ -1,0 +1,98 @@
+.SetupItem {
+    /* outline: 1px solid red; */
+    height: 35px;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 20px;
+    /* padding: 2px; */
+    /* margin: 2px; */
+    background-color: hsl(180, 25%, 23%);
+    border-bottom: 1px solid hsl(180, 26%, 17%);
+}
+
+.SetupItem:hover {
+    background-color: hsl(180, 28%, 27%);
+    cursor: pointer;
+}
+
+.SetupItem:active {
+    background-color: hsl(180, 26%, 27%);
+}
+
+.Id {
+    /* outline: 1px solid darkgreen; */
+    width: 30px;
+    text-align: center;
+    padding-top: 2px;
+    border-right: 1px solid hsl(180, 26%, 17%);
+}
+
+
+.WordPair {
+    /* outline: 1px solid darkturquoise; */
+    box-sizing: border-box;
+    width: 660px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.WordPair i {
+    /* outline: 1px solid darkgreen; */
+    padding: 0 10px;
+    font-size: 15px;
+    /* height: 100%;
+    border-left:1px solid hsl(180, 26%, 17%);
+    border-right:1px solid hsl(180, 26%, 17%); */
+}
+
+.Eng {
+    /* outline: 1px solid darkorange; */
+    width: 200px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.Hun {
+    /* outline: 1px solid darkorange; */
+    width: 200px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.Selected {
+    /* color: hsl(192, 43%, 70%); */
+    color: hsl(170, 43%, 68%);
+    /* background-color: hsl(180, 25%, 30%); */
+    background-color: hsl(145, 17%, 32%);
+}
+
+.Selected:hover {
+    color: hsl(170, 43%, 72%);
+    background-color: hsl(135, 18%, 36%);
+}
+
+.Highlighted {
+    color: hsl(192, 43%, 75%);
+    background-color: hsl(180, 25%, 35%);
+}
+
+.Highlighted:hover {
+    color: hsl(192, 43%, 80%);
+    background-color: hsl(180, 25%, 40%);
+}
+
+.Selected.Highlighted {
+    color: hsl(170, 43%, 80%);
+    background-color: hsl(145, 17%, 46%);
+}
+
+.Selected.Highlighted:hover {
+    color: hsl(170, 43%, 85%);
+    background-color: hsl(145, 17%, 52%);
+}
+
+.Id.Highlighted {
+    color: orange;
+    background-color: black;
+}
