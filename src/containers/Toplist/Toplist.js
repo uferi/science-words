@@ -73,7 +73,7 @@ class Toplist extends Component {
                     }
                     break;
                 case 'TIME SPENT':
-                    value = (entry.timeSpent/60000).toFixed(0);
+                    value = (entry.timeSpent/60000).toFixed(1);
                     break;
                 default:
                     break;

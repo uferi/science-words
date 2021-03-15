@@ -10,6 +10,7 @@ export const fetchUserProfiles = () => {
 
         const url = 'https://science-words-default-rtdb.firebaseio.com/user-profiles.json';
 
+        dispatch(fetchUserProfilesStart());
         axios.get(url)
             .then(response=>{
                 dispatch(setUserProfiles(response.data));
@@ -37,6 +38,7 @@ export const fetchWeeklyStat = () => {
 
         const url = 'https://science-words-default-rtdb.firebaseio.com/weekly-stat.json';
 
+        dispatch(fetchWeeklyStatStart());
         axios.get(url)
         .then(response=>{
                 dispatch(setWeeklyStat(response.data));
@@ -115,5 +117,82 @@ export const displayWeekDecrement = () => {
 export const displayWeekToCurrent = () => {
     return {
         type: actionTypes.STAT_DISPLAY_WEEK_TO_CURRENT
+    }
+}
+
+
+export const updateUserProfile = (profileData) => {
+    return dispatch => {
+
+        const baseUrl = 'https://science-words-default-rtdb.firebaseio.com';
+        const url = `${baseUrl}/user-profiles/${profileData.localId}.json`;
+
+        dispatch(updateUserProfileStart());
+        axios.put(url,profileData)
+            .then( response => {
+                dispatch(updateUserProfileSuccess());
+                dispatch(fetchUserProfiles());
+                // console.log(response);
+            })
+            .catch( error => {
+                dispatch(updateUserProfileFail());
+                // console.log(error);
+            })
+    }
+}
+
+export const updateUserProfileStart = () => {
+    return {
+        type: actionTypes.STAT_UPDATE_USER_PROFILE_START
+    }
+}
+
+export const updateUserProfileSuccess = () => {
+    return {
+        type: actionTypes.STAT_UPDATE_USER_PROFILE_SUCCESS
+    }
+}
+
+export const updateUserProfileFail = () => {
+    return {
+        type: actionTypes.STAT_UPDATE_USER_PROFILE_FAIL
+    }
+}
+
+export const updateWeeklyStat = (data) => {
+    return dispatch => {
+
+        const baseUrl = 'https://science-words-default-rtdb.firebaseio.com';
+        const url = `${baseUrl}/weekly-stat/${data.currentWeek}/${data.localId}.json`;
+
+        dispatch(updateWeeklyStatStart());
+        axios.put(url,data.newStat)
+            .then( response => {
+                dispatch(updateWeeklyStatSuccess());
+                dispatch(fetchWeeklyStat());
+                // console.log(response);
+            })
+            .catch( error => {
+                dispatch(updateWeeklyStatFail());
+                // console.log(error);
+            })
+    }
+}
+
+export const updateWeeklyStatStart = () => {
+    return {
+        type: actionTypes.STAT_UPDATE_WEEKLY_STAT_START
+    }
+}
+
+export const updateWeeklyStatSuccess = () => {
+    return {
+        type: actionTypes.STAT_UPDATE_WEEKLY_STAT_SUCCESS
+    }
+}
+
+export const updateWeeklyStatFail = () => {
+    return {
+        type: actionTypes.STAT_UPDATE_WEEKLY_STAT_FAIL
     }
 }

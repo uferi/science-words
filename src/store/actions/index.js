@@ -29,5 +29,7 @@ export {
     fetchWeeklyStatFail,
     displayWeekIncrement,
     displayWeekDecrement,
-    displayWeekToCurrent
+    displayWeekToCurrent,
+    updateUserProfile,
+    updateWeeklyStat
 } from './statActions';

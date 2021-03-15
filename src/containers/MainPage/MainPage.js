@@ -8,7 +8,32 @@ import classes from './MainPage.module.css';
 import Toplist from '../../containers/Toplist/Toplist';
 
 class MainPage extends Component {
+    state = {
+        timer: null
+    }
+
+    componentDidMount() {
+        this.refreshTimer();
+    }
     
+    componentWillUnmount() {
+        clearTimeout(this.state.timer);
+    }
+    
+    refreshTimer() {
+        const timer = setTimeout(() => {
+            // console.log('MainPage - timeout message');
+            this.props.refreshUserProfiles();
+            this.props.refreshWeeklyStat();
+            this.refreshTimer();
+        }, 5*60*1000) 
+        // refresh it in every 5 minutes, 
+        // but it won't if you leave the page. 
+        // it will star over at every visit
+
+        this.setState({timer: timer})
+    }
+
     makeOverallGoodAnswersToplist = () => {
         const origList = [];
         const sortedList = [];
@@ -288,7 +313,9 @@ const mapDispatchToProps = dispatch => {
     return {
         displayWeekIncrement: () => dispatch(actions.displayWeekIncrement()),
         displayWeekDecrement: () => dispatch(actions.displayWeekDecrement()),
-        displayWeekToCurrent: () => dispatch(actions.displayWeekToCurrent())
+        displayWeekToCurrent: () => dispatch(actions.displayWeekToCurrent()),
+        refreshUserProfiles: () => dispatch(actions.fetchUserProfiles()),
+        refreshWeeklyStat: () => dispatch(actions.fetchWeeklyStat())
     }
 }
 

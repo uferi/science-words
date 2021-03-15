@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component,Ref} from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../../../store/actions/index';
@@ -13,11 +13,21 @@ class SetupPractice extends Component {
         inputTo: '',
         words: [],
         totalWords: 0,
-        highlighted: null
+        highlighted: null,
+        inputFromRef: null,
+        inputToRef: null
     }
 
     componentDidMount() {
         this.componentDidUpdate();
+        if(!this.state.inputToRef){
+            this.setState(
+                {
+                    inputFromRef: React.createRef(),
+                    inputToRef: React.createRef()
+                }
+            )
+        }
     }
 
     componentDidUpdate = () => {
@@ -154,7 +164,10 @@ class SetupPractice extends Component {
     }
 
     onBeginClickedHandler = () => {
-        console.log('practice should begin from: ', this.state.inputFrom, ' to: ', this.state.inputTo);
+        // console.log(this.state.inputFromRef);
+        // this.state.inputFromRef.current.value = '3';
+        // console.log('practice should begin from: ', this.state.inputFrom, ' to: ', this.state.inputTo);
+        this.props.onBeginSession();
     }
 
     render() {
@@ -195,9 +208,9 @@ class SetupPractice extends Component {
                     <div className={classes.Title}>Setup Practice Session</div>
                     <div className={classes.ControlArea}>
                         <div className={classes.RangeFromTitle} onClick={this.onClickFromHandler}>From</div>
-                        <input className={classes.RangeFromInput} type="number" onChange={this.onInputFromChangedHandler} value={this.state.inputFrom} />
+                        <input className={classes.RangeFromInput} type="number" onChange={this.onInputFromChangedHandler} readOnly value={this.state.inputFrom} ref={this.state.inputFromRef} />
                         <div className={classes.RangeToTitle} onClick={this.onClickToHandler}>To</div>
-                        <input className={classes.RangeToInput} type="number" onChange={this.onInputToChangedHandler} value={this.state.inputTo} />
+                        <input className={classes.RangeToInput} type="number" onChange={this.onInputToChangedHandler} readOnly value={this.state.inputTo} ref={this.state.inputToRef} />
                         <div className={classes.ButtonBegin} onClick={this.onBeginClickedHandler}>BEGIN PRACTICE SESSION</div>
                     </div>
 

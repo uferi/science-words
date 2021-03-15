@@ -1,7 +1,7 @@
 import * as actionTypes from './actionTypes';
 import * as actions from './index';
 import axios from 'axios';
-import { fetchUserProfiles, fetchUserProfilesStart, fetchUserProfilesSuccess } from './statActions';
+// import { fetchUserProfiles, fetchUserProfilesStart, fetchUserProfilesSuccess } from './statActions';
 
 
 export const authStart = () => {
@@ -25,10 +25,10 @@ export const authSignIn = (data) => {
         .then(response => {
             dispatch(authSuccess(response.data));
 
-            dispatch(actions.fetchUserProfilesStart());
+            // dispatch(actions.fetchUserProfilesStart());
             dispatch(actions.fetchUserProfiles());
 
-            dispatch(actions.fetchWeeklyStatStart());
+            // dispatch(actions.fetchWeeklyStatStart());
             dispatch(actions.fetchWeeklyStat());
 
             data.history.push('/');

@@ -1,0 +1,186 @@
+.PracticeItem {
+    /* outline: 1px solid darkorange; */
+    height: 35px;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 20px;
+    background-color: hsl(180, 25%, 23%);
+    border-bottom: 1px solid hsl(180, 26%, 17%);
+}
+
+.Id {
+    /* outline: 1px solid darkgreen; */
+    width: 31px;
+    text-align: center;
+    padding-top: 2px;
+    border-right: 1px solid hsl(180, 26%, 17%);
+}
+
+.Wordblock {
+    /* outline: 1px solid darkgreen; */
+    box-sizing: border-box;
+    width: 690px;
+    /* margin-left: 10px; */
+    display: flex;
+    justify-content: left;
+}
+
+.Wordblock i {
+    /* outline: 1px solid red; */
+    padding: 7px 10px;
+    border-right: 1px solid hsl(180, 26%, 17%);
+}
+
+.Input {
+    /* outline: 1px solid red; */
+    outline: none;
+    outline-color: hsl(180, 20%, 27%);
+    border-color: hsl(180, 20%, 27%);
+    border: none;
+    box-sizing: border-box;
+    width: 320px;
+    /* margin-top: 2px; */
+    height: 100%;
+    /* background-color: hsl(180, 25%, 27%); */
+    background-color: hsl(180, 30%, 32%);
+    padding: 0px 10px;
+    font-size: 19px;
+    border-right: 1px solid hsl(180, 26%, 17%);
+    box-shadow: inset 0 0 30px hsla(180, 26%, 19%, 0.6);
+}
+
+.Input:focus {
+    background-color: hsl(180, 25%, 40%);
+    /* box-shadow: inset 0 0 20px hsl(180, 26%, 18%); */
+}
+
+.Eng .Input{
+    text-align: right;
+}
+
+.Query .Input {
+    color: hsl(192, 35%, 70%);
+    /* background-color: hsl(180, 20%, 27%); */
+}
+
+.QueryFilled .Input {
+    color: hsl(192, 35%, 70%);
+    background-color: hsl(180, 25%, 26%);
+}
+
+.QueryFilled .Input:focus {
+    color: hsl(192, 35%, 70%);
+    background-color: hsl(180, 25%, 40%);
+}
+
+.AnswerGood .Input {
+    color: hsl(192, 35%, 70%);
+    background-color: hsl(123, 25%, 30%);
+}
+
+.AnswerWrong .Input {
+    color: hsl(192, 35%, 70%);
+    background-color: hsl(0, 25%, 30%);
+}
+
+.Wordblock .Label {
+    /* outline: 1px solid darkorange; */
+    box-sizing: border-box;
+    width: 320px;
+    height: 100%;
+    color: hsl(192, 35%, 50%);
+    background-color: hsl(180, 25%, 23%);
+    border-right: 1px solid hsl(180, 26%, 17%);
+    padding: 0px 10px;
+}
+
+.Wordblock .Eng .Label{
+    text-align: right;
+}
+
+
+
+
+
+/* Tooltip container */
+.TooltipHun,
+.TooltipEng {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  //border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.TooltipEng .TooltipText {
+    /* display: none; */
+    box-sizing: border-box;
+    visibility: hidden;
+    width: 320px;
+    height: 100%;
+    background-color: #222;
+    color: #fff;
+    text-align: right;
+    font-size: 19px;
+    padding: 2px 10px 0px 10px;
+    border-radius: 6px;
+
+    /* Position the Tooltip text */
+    position: absolute;
+    z-index: 150;
+    bottom: 0%;
+    left: 0%;
+    margin-left: 0px;
+
+    /* Fade in Tooltip */
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.TooltipHun .TooltipText {
+    /* display: none; */
+    box-sizing: border-box;
+    visibility: hidden;
+    width: 320px;
+    height: 100%;
+    background-color: #222;
+    color: #fff;
+    text-align: left;
+    font-size: 19px;
+    padding: 2px 10px 0px 10px;
+    border-radius: 6px;
+
+    /* Position the Tooltip text */
+    position: absolute;
+    z-index: 150;
+    bottom: 0%;
+    left: 0%;
+    margin-left: 0px;
+
+    /* Fade in Tooltip */
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+/* Tooltip arrow */
+.TooltipHun .TooltipText::after,
+.TooltipEng .TooltipText::after {
+    display: none;
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #222 transparent transparent transparent;
+}
+
+/* Show the Tooltip text when you mouse over the Tooltip container */
+.TooltipHun:hover .TooltipText,
+.TooltipEng:hover .TooltipText {
+    /* display: inline-block; */
+    visibility: visible;
+    bottom: 0%;
+    opacity: 1;
+}

@@ -1,0 +1,139 @@
+.PracticeSession {
+    /* outline: 1px solid green; */
+    color: rgb(98, 173, 192);
+    background-color: hsl(180, 26%, 21%);
+    margin-top: 10px;
+    border-radius: 15px 15px 5px 5px;
+    width: 720px;
+    /* height: 600px; */
+    min-height: 119px;
+    max-height: calc( 100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    border: 1px solid rgb(33, 56, 56);
+}
+
+.Title {
+    /* outline: 1px solid green; */
+    box-sizing: border-box;
+    color: rgb(98, 173, 192);
+    background-color: rgb(33, 56, 56);
+    font-size: 20px;
+    border-radius: 15px 15px 0 0;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+    user-select: none;
+}
+
+
+.ControlArea {
+    /* outline: 1px solid darkgoldenrod; */
+    box-sizing: border-box;
+    height: 60px;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    border-bottom: 1px solid rgb(33, 56, 56);
+}
+
+.ResultMessage {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.ResultMessage span{
+    padding-left: 30px;
+}
+
+
+.RangeFromTitle,
+.RangeToTitle {
+    /* box-sizing: border-box; */
+    /* outline: 1px solid red ; */
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px 0px 0px 40px;
+    padding: 3px 10px ;
+    width: 70px;
+    height: 30px;
+    /* height: 50px; */
+    text-align: center;
+    color: hsl(192, 43%, 10%);
+    background-color: hsl(180, 26%, 28%);
+    border-radius: 5px 0 0 5px;
+    /* user-select: none; */
+}
+
+.RangeFromTitle:hover,
+.RangeToTitle:hover {
+    color: hsl(192, 43%, 10%);
+    background-color: hsl(180, 26%, 45%);
+    cursor: pointer;
+}
+
+.RangeFromInput,
+.RangeToInput {
+    box-sizing: border-box;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    /* font-weight: bold; */
+    width: 100px;
+    height: 30px;
+    padding: 5px 10px 3px 10px;
+    color: hsl(192, 43%, 70%);
+    /* background-color: hsl(192, 43%, 30%); */
+    background-color: hsl(180, 26%, 18%);
+    border-radius: 0 5px 5px 0;
+}
+
+.ButtonCancel {
+    /* box-sizing: border-box; */
+    /* height: 30px; */
+    font-size: 16px;
+    font-weight: 600;
+    background-color: hsl(180, 26%, 18%);
+    border-radius: 8px;
+    margin: 0px 30px 0px 40px;
+    padding: 6px 15px ;
+    cursor: pointer;
+    /* border: 1px solid hsl(180, 26%, 30%); */
+}
+
+.ButtonCancel:hover {
+    color: hsl(180, 26%, 10%);
+    background-color: hsl(180, 26%, 60%);
+    user-select: none;
+}
+
+.ListArea {
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.ListContainer {
+    box-sizing: border-box;
+}
+
+.Footer {
+    /* outline: 1px solid red; */
+    background-color: rgb(33, 56, 56);
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Spinner {
+    font-size: 50px;
+    height: 70px;
+    text-align: center;
+}

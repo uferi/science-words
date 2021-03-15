@@ -3,9 +3,24 @@ import * as actions from '../actions/index';
 
 // currentWeek, displayWeek should look like: '2021-09'
 
+const getCurrentWeek = () => {
+        let d = new Date(Date.UTC(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()));
+        let dayNum = d.getUTCDay() || 7;
+        d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+        let yearStart = new Date(Date.UTC(new Date().getUTCFullYear(),0,1));
+        let weekNumber =  Math.ceil((((d - yearStart) / 86400000) + 1)/7);
+        const thisYear = new Date().getFullYear().toString();
+        const outString = thisYear + '-' + weekNumber.toString().padStart(2,'0');
+        // console.log(outString);
+    return outString;
+}
+
+
 const initialState = {
-    currentWeek: (new Date().getFullYear().toString()) + '-' + (Math.floor((((new Date().getTime())-new Date(new Date().getFullYear(), 0, 1).getTime())/1000/60/60/24/7)+1).toString().padStart(2,'0')),
-    displayWeek: (new Date().getFullYear().toString()) + '-' + (Math.floor((((new Date().getTime())-new Date(new Date().getFullYear(), 0, 1).getTime())/1000/60/60/24/7)+1).toString().padStart(2,'0')),
+    // currentWeek: (new Date().getFullYear().toString()) + '-' + (Math.floor( (( (new Date().getTime())-(new Date(new Date().getFullYear(), 0, 1).getTime()) )/1000/60/60/24/7) ).toString().padStart(2,'0')),
+    // currentWeek: '2021-08',
+    currentWeek: getCurrentWeek(),
+    displayWeek: getCurrentWeek(),
     isUserProfilesLoading: false,
     isWeeklyStatLoading: false,
     userProfiles: null,

@@ -21,6 +21,12 @@ class Login extends Component {
                 password: 'baboca4242',
             }
         )
+        // this.setState(
+        //     {
+        //         email: 'test2@test2.com',
+        //         password: 'test24242',
+        //     }
+        // )
     }
 
     onEmailChangedHandler = (event) => {
@@ -52,18 +58,6 @@ class Login extends Component {
 
 
     render() {
-
-        // this.props.onTestUserAction('Yay! I managed to send a message through redux to dispatch it with actions!');
-
-        // const actualYear = new Date().getFullYear().toString();
-        // const actualWeek = Math.floor((((new Date().getTime())-new Date(new Date().getFullYear(), 0, 1).getTime())/1000/60/60/24/7)+1).toString().padStart(2,'0');
-        // const thisWeek = actualYear + '-' + actualWeek;
-        // const prevWeek = thisWeek.split('-')[0]+'-'+(+thisWeek.split('-')[1]-1).toString().padStart(2,'0');
-        // console.log(thisWeek);
-        // console.log(prevWeek);
-
-        // const thisWeek = (new Date().getFullYear().toString()) + '-' + (Math.floor((((new Date().getTime())-new Date(new Date().getFullYear(), 0, 1).getTime())/1000/60/60/24/7)+1).toString().padStart(2,'0'));
-        
 
         const spinner = (
             <div>
