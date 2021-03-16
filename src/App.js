@@ -4,10 +4,12 @@ import {Redirect, Route, Switch} from 'react-router';
 import {connect} from 'react-redux';
 
 import Login from './containers/Login/Login';
+import Logout from './containers/Logout/Logout';
 import Register from './containers/Register/Register';
 import Layout from './hoc/Layout/Layout';
 import MainPage from './containers/MainPage/MainPage';
 import PracticePage from './containers/PracticePage/PracticePage';
+import ProfilePage from './containers/ProfilePage/ProfilePage';
 
 class App extends Component {
     
@@ -26,11 +28,12 @@ class App extends Component {
       routes = (
         <Switch>
           {/* <Route path="/auth" exact component={Logout} /> */}
-          <Route path="/auth" exact render={()=><div>logout</div>} />
+          {/* <Route path="/auth" exact render={()=><div>logout</div>} /> */}
+          <Route path="/auth" exact component={Logout} />
           {/* <Route path="/" exact component={Logout} /> */}
           {/* <Route path="/practice" exact render={()=><div>practice</div>} /> */}
           <Route path="/practice" exact component={PracticePage} />
-          <Route path="/profile" exact render={()=><div>profile</div>} />
+          <Route path="/profile" exact component={ProfilePage} />
           <Route path="/" exact component={MainPage} />
           <Redirect to="/" />
         </Switch>

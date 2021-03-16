@@ -129,4 +129,8 @@ export const authSignUpFail = () => {
     }
 }
 
-// export const userSaveProfile = ()
+export const authLogout = () => {
+    return {
+        type: actionTypes.AUTH_LOGOUT
+    }
+}

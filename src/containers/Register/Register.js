@@ -11,6 +11,10 @@ class Register extends Component {
         nickName: '',
         email: '',
         password: '',
+        passwordAgain: '',
+        passwordTouched: false,
+        passwordAgainTouched: false,
+        passwordMismatch: false,
         isSignup: true
     }
 
@@ -31,26 +35,57 @@ class Register extends Component {
 
     onPasswordChangedHandler = (event) => {
         const newPassword = event.target.value;
-        this.setState({
-            password: newPassword
-        });
+        if(!this.state.passwordTouched){
+            this.setState({
+                password: newPassword,
+                passwordTouched: true
+            });
+        } else {
+            this.setState({
+                password: newPassword
+            });
+        }
+    }
+
+    onPasswordAgainChangedHandler = (event) => {
+        const newPasswordAgain = event.target.value;
+        if(!this.state.passwordAgainTouched){
+            this.setState({
+                passwordAgain: newPasswordAgain,
+                passwordAgainTouched: true
+            });
+        } else {
+            this.setState({
+                passwordAgain: newPasswordAgain
+            });
+        }
     }
 
     onRegisterHandler = () => {
-        this.props.onAuth(
-            {
-                email: this.state.email,
-                password: this.state.password,
-                isSignup: this.state.isSignup,
-                nickName: this.state.nickName,
-                history: this.props.history
-            }
-        )
+
+        if(this.state.password === this.state.passwordAgain){
+            this.setState({
+                passwordMismatch: false
+            });
+            this.props.onAuth(
+                {
+                    email: this.state.email,
+                    password: this.state.password,
+                    isSignup: this.state.isSignup,
+                    nickName: this.state.nickName,
+                    history: this.props.history
+                }
+            )
+        } else {
+            console.log('Mismatch!');
+            this.setState({
+                passwordTouched: false,
+                passwordAgainTouched: false,
+                passwordMismatch: true
+            });
+        }
         // this.props.history.push('/auth');
         // console.log(this.state);
-
-
-        
     }
 
     render() {
@@ -64,6 +99,7 @@ class Register extends Component {
                 <i className="fa fa-cog fa-spin" aria-hidden="true"></i>
             </div>
         )
+
 
         return (
             <div className={classes.Register}>
@@ -90,12 +126,21 @@ class Register extends Component {
                     />
                 </div>
                 <div>
-                    <label>password:</label>
+                    <label className={(this.state.passwordMismatch && !this.state.passwordTouched)? classes.Mismatch : null}>password:</label>
                     <input 
                         className={classes.PasswordInput} 
                         type="password" 
                         onChange={this.onPasswordChangedHandler} 
                         value={this.state.password}
+                    />
+                </div>
+                <div>
+                    <label className={(this.state.passwordMismatch && !this.state.passwordAgainTouched)? classes.Mismatch : null}>password again:</label>
+                    <input 
+                        className={classes.PasswordInput} 
+                        type="password" 
+                        onChange={this.onPasswordAgainChangedHandler} 
+                        value={this.state.passwordAgain}
                     />
                 </div>
                 <button className={classes.Button} onClick={this.onRegisterHandler}>Register</button>

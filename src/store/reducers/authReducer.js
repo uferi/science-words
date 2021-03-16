@@ -61,6 +61,22 @@ const authFail = (state, action) => {
     }
 }
 
+const authLogout = (state,action) => {
+    return {
+        ...state,
+        isAuthenticated: false,
+        isLoading: false,
+        displayName: '',
+        email: '',
+        expiresIn: '',
+        idToken: '',
+        localId: '',
+        refreshToken: '',
+        registered: false,
+        error: null
+    }
+}
+
 const authReducer = ( state=initialState, action ) => {
     switch (action.type){
         case actionTypes.AUTH_START:
@@ -73,6 +89,8 @@ const authReducer = ( state=initialState, action ) => {
             return authSuccess(state,action);
         case actionTypes.AUTH_FAIL:
             return authFail(state,action);
+        case actionTypes.AUTH_LOGOUT:
+            return authLogout(state,action);
         default:
             return state;
     }

@@ -1,0 +1,230 @@
+.ProfilePage {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    /* height: 400px; */
+    background-color: hsl(180, 26%, 21%);
+    /* border-radius: 15px 15px 5px 5px; */
+    border-radius: 15px;
+    /* height: calc(50vh - 80px); */
+    /* min-height: 200px; */
+    /* width: auto; */
+    margin-top: 30px;
+    /* padding-bottom: 10px; */
+    user-select: none;
+    border: 2px solid rgb(33, 56, 56);
+    color: rgb(98, 173, 192);
+}
+
+.Title {
+    /* outline: 1px solid green; */
+    box-sizing: border-box;
+    background-color: rgb(33, 56, 56);
+    border-radius: 15px 15px 0 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+}
+
+.BasicInfo {
+    /* outline: 1px solid salmon; */
+    font-size: 22px;
+    border-bottom: 2px solid rgb(33, 56, 56);
+    text-align: center;
+    /* padding: 10px 0px 10px 0px;  */
+    /* margin: 15px 0px; */
+}
+
+.BasicInfo .Entry {
+    /* outline: 1px solid green; */
+    /* padding: 10px 0px 10px 0px;  */
+    /* height: 50px; */
+    /* margin: 5px 0px; */
+    border-bottom: 1px solid rgb(33, 56, 56);
+}
+
+.BasicInfo .Entry .EntryName {
+    background-color: hsl(180, 26%, 20%);
+    font-size: 15px;
+    width: 100px;
+    /* height: 10px; */
+    position: relative;
+    top: 0px;
+    left: 0px;
+    border-bottom: 1px solid rgb(33, 56, 56);
+    border-right: 1px solid rgb(33, 56, 56);
+    border-radius: 0 0 10px 0;
+}
+
+.BasicInfo .Entry .EntryValue {
+    /* outline: 1px solid green; */
+    position: relative;
+    top: -10px;
+    padding: 5px 0px;
+}
+
+.StatSection {
+    /* outline: 1px solid salmon; */
+    display: flex;
+}
+
+.AllTimeStat {
+    /* outline: 1px solid green; */
+    width: 45%;
+    /* padding: 10px; */
+    border-right: 2px solid rgb(33, 56, 56);
+}
+
+.AllTimeResult {
+    /* outline: 1px solid darkorange; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.AllTimeResult .Entry {
+    /* outline: 1px solid green; */
+    width: 70%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 3px 2px 3px 2px;
+}
+
+.AllTimeResult .Entry .EntryName {
+    /* outline: 1px solid green; */
+    width: 130px;
+    text-align: left;
+}
+
+.AllTimeResult .Entry .EntryValue {
+    /* outline: 1px solid green; */
+    width: 60px;
+    text-align: Right;
+}
+
+.AllTimeResult .Entry i {
+    /* outline: 1px solid purple; */
+    width: 20px;
+    padding: 0px 1px;
+}
+
+.WeeklyStat {
+    /* outline: 1px solid green; */
+    width: 55%;
+}
+
+.WeeklyStatContainer {
+    display: flex;
+}
+
+.WeeklyResult {
+    /* outline: 1px solid green; */
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.WeeklyResult .Entry {
+    /* outline: 1px solid green; */
+    width: 70%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 3px 2px 3px 2px;
+}
+
+.WeeklyResult .Entry .EntryName {
+    /* outline: 1px solid green; */
+    width: 130px;
+    text-align: left;
+}
+
+.WeeklyResult .Entry .EntryValue {
+    /* outline: 1px solid green; */
+    width: 60px;
+    text-align: Right;
+}
+
+.WeeklyResult .Entry i {
+    /* outline: 1px solid purple; */
+    width: 20px;
+    padding: 0px 1px;
+}
+
+.InnerTitle {
+    /* outline: 1px solid green; */
+    box-sizing: border-box;
+    text-align: center;
+    background-color: hsl(180, 26%, 19%);
+    padding: 3px;
+    border-bottom: 2px solid rgb(33, 56, 56);
+}
+
+.WeekList {
+    box-sizing: border-box;
+    background-color: hsl(180, 26%, 20%);
+    width: 100px;
+    height: 132px;
+    text-align: center;
+    /* padding: 2px; */
+    overflow: auto;
+    border-right: 2px solid rgb(33, 56, 56);
+}
+
+.IconGood {
+    color: gold;
+}
+
+.IconAll {
+    /* color:cyan; */
+    color:rgb(46, 115, 243);
+}
+
+.IconRatio {
+    /* color:lightcoral; */
+    color:rgb(105, 219, 110);
+}
+
+.IconTime {
+    /* color:lightsteelblue; */
+    color:rgb(179, 209, 248);
+}
+
+.WeekItem {
+    font-weight: 400;
+    padding: 1px;
+    border-bottom: 2px solid rgb(33, 56, 56);
+}
+
+.WeekItem:hover {
+    font-weight: 700;
+    background-color: hsl(180, 26%, 25%);
+}
+
+.WeekItem:active {
+    color: hsl(180, 26%, 10%);
+    background-color: hsl(180, 26%, 60%);
+}
+
+.WeekItem.Selected {
+    background-color: hsl(180, 26%, 15%);
+}
+
+.WeekItem.Selected:hover {
+    background-color: hsl(180, 26%, 13%);
+}
+
+.WeekItem.Selected:active {
+    color: hsl(180, 26%, 10%);
+    background-color: hsl(180, 26%, 50%);
+}

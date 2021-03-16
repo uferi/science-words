@@ -1,6 +1,6 @@
 export{
     userTestAction,
-    userInitProfile
+    userInitProfile,
 } from './userActions';
 
 export {
@@ -15,7 +15,8 @@ export {
     auth,
     authStart,
     authSuccess,
-    authFail
+    authFail,
+    authLogout
 } from './authActions';
 
 export {

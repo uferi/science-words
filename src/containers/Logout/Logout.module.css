@@ -1,0 +1,54 @@
+.Logout {
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    color: rgb(98, 173, 192);
+    background-color: hsl(180, 26%, 21%);
+    /* border-radius: 15px 15px 5px 5px; */
+    border-radius: 15px;
+    margin-top: 60px;
+    user-select: none;
+    border: 2px solid rgb(33, 56, 56);
+    align-items: center;
+}
+
+.Title {
+    /* outline: 1px solid green; */
+    box-sizing: border-box;
+    background-color: rgb(33, 56, 56);
+    border-radius: 15px 15px 0 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+}
+
+.Message {
+    /* outline: 1px solid green; */
+    box-sizing: border-box;
+    font-size: 20px;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 2px solid rgb(33, 56, 56);
+    text-align: center;
+}
+
+.Button {
+    font-size: 20px;
+    font-weight: 600;
+    background-color: rgb(33, 56, 56);
+    padding: 10px 30px;
+    margin: 15px;
+    border-radius: 15px;
+}
+
+.Button:hover {
+    color: hsl(180, 26%, 10%);
+    background-color: hsl(180, 26%, 60%);
+}
+
+.Button:active {
+    color: hsl(180, 26%, 15%);
+    background-color: hsl(180, 26%, 80%);
+}

@@ -13,6 +13,7 @@ const getCurrentWeek = () => {
         const outString = thisYear + '-' + weekNumber.toString().padStart(2,'0');
         // console.log(outString);
     return outString;
+    // return '2021-05';
 }
 
 
