@@ -15,12 +15,12 @@ class Login extends Component {
     }
 
     componentDidMount(){
-        this.setState(
-            {
-                email: 'baboca@baboca.com',
-                password: 'baboca4242',
-            }
-        )
+        // this.setState(
+        //     {
+        //         email: 'baboca@baboca.com',
+        //         password: 'baboca4242',
+        //     }
+        // )
         // this.setState(
         //     {
         //         email: 'test2@test2.com',
