@@ -27,7 +27,7 @@ class SetupPractice extends Component {
                     inputToRef: React.createRef()
                 }
             )
-        }
+        }        
     }
 
     componentDidUpdate = () => {
@@ -67,7 +67,14 @@ class SetupPractice extends Component {
                 to: this.state.inputTo
             }
         )
-
+        
+        if(this.state.inputFromRef){
+            this.state.inputFromRef.current.value = this.state.inputFrom;
+        }
+        if(this.state.inputToRef){
+            this.state.inputToRef.current.value = this.state.inputTo;
+        }
+        
     }
 
     onInputFromChangedHandler = (event) => {
@@ -89,6 +96,26 @@ class SetupPractice extends Component {
         })
     }
 
+    onInputFromKeyDown = (event) => {
+        if(event.key==='Enter'){
+            let newFrom = +this.state.inputFromRef.current.value;
+            let newTo = +this.state.inputTo;
+            if(newFrom<1){
+                newFrom = 1;
+            }
+            if(newFrom>this.state.totalWords){
+                newFrom = this.state.totalWords;
+            }
+            if(newTo<newFrom){
+                newTo = newFrom;
+            }
+            this.setState({
+                inputFrom: newFrom,
+                inputTo: newTo
+            })
+        }
+    }
+
     onInputToChangedHandler = (event) => {
         // console.log('to:',event.target.value);
         let newFrom = +this.state.inputFrom;
@@ -106,6 +133,29 @@ class SetupPractice extends Component {
             inputFrom: newFrom,
             inputTo: newTo
         })
+    }
+
+    onInputToKeyDown = (event) => {
+        if(event.key==='Enter'){
+            let newFrom = +this.state.inputFrom;
+            let newTo = +this.state.inputToRef.current.value;
+            if(newTo === 0){
+                newTo = newFrom;
+            }
+            if(newTo<1){
+                newTo = 1;
+            }
+            if(newTo>this.state.totalWords){
+                newTo = this.state.totalWords;
+            }
+            if(newTo<newFrom){
+                newFrom = newTo;
+            }
+            this.setState({
+                inputFrom: newFrom,
+                inputTo: newTo
+            })
+        }
     }
 
     onItemClickedHandler = (itemId) => {
@@ -206,13 +256,22 @@ class SetupPractice extends Component {
             <div className={classes.SetupPractice}>
                 <div className={classes.Header}>
                     <div className={classes.Title}>Setup Practice Session</div>
-                    <div className={classes.ControlArea}>
+                    <form className={classes.ControlArea}>
                         <div className={classes.RangeFromTitle} onClick={this.onClickFromHandler}>From</div>
-                        <input className={classes.RangeFromInput} type="number" onChange={this.onInputFromChangedHandler} readOnly value={this.state.inputFrom} ref={this.state.inputFromRef} />
+                        <input 
+                            className={classes.RangeFromInput} 
+                            type="number" 
+                            onBlur={this.onInputFromChangedHandler} 
+                            onKeyDown={this.onInputFromKeyDown} ref={this.state.inputFromRef} />
                         <div className={classes.RangeToTitle} onClick={this.onClickToHandler}>To</div>
-                        <input className={classes.RangeToInput} type="number" onChange={this.onInputToChangedHandler} readOnly value={this.state.inputTo} ref={this.state.inputToRef} />
+                        <input 
+                            className={classes.RangeToInput} 
+                            type="number" 
+                            onBlur={this.onInputToChangedHandler} 
+                            onKeyDown={this.onInputToKeyDown} 
+                            ref={this.state.inputToRef} />
                         <div className={classes.ButtonBegin} onClick={this.onBeginClickedHandler}>BEGIN PRACTICE SESSION</div>
-                    </div>
+                    </form>
 
                 </div>
                 <div className={classes.ListArea}>
