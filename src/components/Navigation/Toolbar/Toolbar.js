@@ -11,7 +11,7 @@ const toolbar = (props) => {
     if(props.displayName !== ''){
         wellcomeMessage = (
             <div className={classes.Wellcome}>
-               Wellcome <strong>{props.displayName}</strong>! Have a good time with practising!
+               Welcome <strong>{props.displayName}</strong>! Have a good time with practising!
             </div>
         )
     }

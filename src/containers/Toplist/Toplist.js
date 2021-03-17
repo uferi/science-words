@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
 import classes from './Toplist.module.css';
 
@@ -78,17 +79,28 @@ class Toplist extends Component {
                 default:
                     break;
             }
+
+            const entryClasses = [classes.Entry];
+            const numberClasses = [classes.Number];
+            const nameClasses = [classes.Name];
+            const valueClasses = [classes.Value];
+            if( entry.displayName === this.props.displayName){
+                entryClasses.push(classes.Highlighted);
+                numberClasses.push(classes.Highlighted);
+                nameClasses.push(classes.Highlighted);
+                valueClasses.push(classes.Highlighted);
+            }
                         
             return (
-                <div className={classes.Entry} key={i}>
-                    <div className={classes.Number}>{i+1}.</div>
-                    <div className={classes.Name}>{entry.displayName}</div>
+                <div className={entryClasses.join(' ')} key={i}>
+                    <div className={numberClasses.join(' ')}>{i+1}.</div>
+                    <div className={nameClasses.join(' ')}>{entry.displayName}</div>
                     <div className={classes.ValueContainer}>
                         <div className={classes.IconGood}>{this.props.title==='GOOD ANSWERS' ? <i className="fa fa-star" aria-hidden="true"/>: null}</div>
                         <div className={classes.IconAll}>{this.props.title==='ALL ANSWERS' ? <i className="fa fa-book" aria-hidden="true"/>: null}</div>
                         <div className={classes.IconTime}>{this.props.title==='TIME SPENT' ? <i className="fa fa-clock-o" aria-hidden="true"/>: null}</div>
                         <div className={classes.IconRatio}>{this.props.title==='RATIO' ? <i className="fa fa-balance-scale" aria-hidden="true"/>: null}</div>
-                        <div className={classes.Value}>{value}</div>
+                        <div className={valueClasses.join(' ')}>{value}</div>
                             
                     </div>
                 </div>
@@ -120,4 +132,10 @@ class Toplist extends Component {
     };
 }
 
-export default Toplist;
+const mapStateToProps = state => {
+    return {
+        displayName: state.auth.displayName
+    }
+}
+
+export default connect(mapStateToProps)(Toplist);

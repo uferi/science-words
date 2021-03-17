@@ -47,6 +47,11 @@
     justify-content:space-evenly;
 }
 
+.Entry.Highlighted {
+    /* box-shadow: 0px 0px 5px hsl(180, 26%, 15%); */
+    background-color: hsl(180, 26%, 17%);
+}
+
 .Number {
     /* outline: 1px solid red; */
     font-weight: bold;
@@ -71,6 +76,17 @@
     width: 100%;
     padding-left: 10px;
     text-align: right;
+}
+
+.Number.Highlighted,
+.Name.Highlighted,
+.Value.Highlighted {
+    /* color: hsl(27, 40%, 80%); */
+    /* color: hsl(192, 43%, 57%); */
+    /* color: hsl(172, 50%, 70%); */
+    color: hsl(20, 50%, 55%);
+    /* text-decoration: underline ; */
+    /* box-shadow: 0px 0px 5px black; */
 }
 
 .IconGood {

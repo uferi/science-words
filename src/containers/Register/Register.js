@@ -62,8 +62,7 @@ class Register extends Component {
     }
 
     onRegisterHandler = () => {
-
-        if(this.state.password === this.state.passwordAgain){
+        if(this.state.password === this.state.passwordAgain && this.state.password.length >= 6){
             this.setState({
                 passwordMismatch: false
             });
@@ -77,7 +76,7 @@ class Register extends Component {
                 }
             )
         } else {
-            console.log('Mismatch!');
+            // console.log('Mismatch!');
             this.setState({
                 passwordTouched: false,
                 passwordAgainTouched: false,
@@ -107,6 +106,10 @@ class Register extends Component {
                     <h3>Register New User!</h3>
                     {this.props.isLoading ? spinner : null}
                 </div>
+                <div className={classes.Info}>
+                    ( After successful registration activation email won't be sent. 
+                    The account is active immediately<br/>
+                    - You can sign in right away. )</div>
                 <div>
                     <label>nickname:</label>
                     <input 
@@ -126,7 +129,7 @@ class Register extends Component {
                     />
                 </div>
                 <div>
-                    <label className={(this.state.passwordMismatch && !this.state.passwordTouched)? classes.Mismatch : null}>password:</label>
+                    <label className={(this.state.passwordMismatch && !this.state.passwordTouched)? classes.Mismatch : null}>password (min.6-digits) :</label>
                     <input 
                         className={classes.PasswordInput} 
                         type="password" 
