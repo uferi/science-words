@@ -51,17 +51,29 @@
     /* height: 50px; */
     text-align: center;
     color: hsl(192, 43%, 10%);
+    /* background-color: hsl(180, 26%, 28%); */
     background-color: hsl(180, 26%, 28%);
     border-radius: 5px 0 0 5px;
     /* user-select: none; */
 }
 
-.RangeFromTitle:hover,
+.RangeFromTitle.Highlighted,
+.RangeToTitle.Highlighted {
+    background-color: hsl(160, 50%, 35%);
+}
+
+.RangeFromTitle.Highlighted:hover,
+.RangeToTitle.Highlighted:hover {
+    background-color: hsl(160, 55%, 48%);
+    cursor: pointer;
+}
+
+/* .RangeFromTitle:hover,
 .RangeToTitle:hover {
     color: hsl(192, 43%, 10%);
     background-color: hsl(180, 26%, 45%);
     cursor: pointer;
-}
+} */
 
 .RangeFromInput,
 .RangeToInput {

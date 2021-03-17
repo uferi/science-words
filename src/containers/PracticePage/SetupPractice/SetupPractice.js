@@ -252,18 +252,25 @@ class SetupPractice extends Component {
             </div>
         )
 
+        let classesButtonFrom = [classes.RangeFromTitle];
+        let classesButtonTo = [classes.RangeToTitle];
+        if(this.state.highlighted){
+            classesButtonFrom.push(classes.Highlighted);
+            classesButtonTo.push(classes.Highlighted);
+        }
+
         return (
             <div className={classes.SetupPractice}>
                 <div className={classes.Header}>
                     <div className={classes.Title}>Setup Practice Session</div>
                     <form className={classes.ControlArea}>
-                        <div className={classes.RangeFromTitle} onClick={this.onClickFromHandler}>From</div>
+                        <div className={classesButtonFrom.join(' ')} onClick={this.onClickFromHandler}>From</div>
                         <input 
                             className={classes.RangeFromInput} 
                             type="number" 
                             onBlur={this.onInputFromChangedHandler} 
                             onKeyDown={this.onInputFromKeyDown} ref={this.state.inputFromRef} />
-                        <div className={classes.RangeToTitle} onClick={this.onClickToHandler}>To</div>
+                        <div className={classesButtonTo.join(' ')} onClick={this.onClickToHandler}>To</div>
                         <input 
                             className={classes.RangeToInput} 
                             type="number" 
