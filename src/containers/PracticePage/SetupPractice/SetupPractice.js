@@ -81,6 +81,9 @@ class SetupPractice extends Component {
         // console.log('from:',event.target.value);
         let newFrom = +event.target.value;
         let newTo = +this.state.inputTo;
+        if(newFrom === 0){
+                newFrom = +this.state.inputFrom;
+            }
         if(newFrom<1){
             newFrom = 1;
         }
@@ -100,6 +103,9 @@ class SetupPractice extends Component {
         if(event.key==='Enter'){
             let newFrom = +this.state.inputFromRef.current.value;
             let newTo = +this.state.inputTo;
+            if(newFrom === 0){
+                newFrom = +this.state.inputFrom;
+            }
             if(newFrom<1){
                 newFrom = 1;
             }
@@ -120,6 +126,9 @@ class SetupPractice extends Component {
         // console.log('to:',event.target.value);
         let newFrom = +this.state.inputFrom;
         let newTo = +event.target.value;
+        if(newTo === 0){
+                newTo = +this.state.inputTo;
+            }
         if(newTo<1){
             newTo = 1;
         }
@@ -140,7 +149,7 @@ class SetupPractice extends Component {
             let newFrom = +this.state.inputFrom;
             let newTo = +this.state.inputToRef.current.value;
             if(newTo === 0){
-                newTo = newFrom;
+                newTo = +this.state.inputTo;
             }
             if(newTo<1){
                 newTo = 1;
@@ -259,6 +268,8 @@ class SetupPractice extends Component {
             classesButtonTo.push(classes.Highlighted);
         }
 
+        const selected = (+this.state.inputTo) - (+this.state.inputFrom) + 1;
+
         return (
             <div className={classes.SetupPractice}>
                 <div className={classes.Header}>
@@ -288,7 +299,7 @@ class SetupPractice extends Component {
                     </div>
                 </div>
                 <div className={classes.Footer}>
-                    Total Words: {words.length}
+                    Total Words: {words.length} - Selected: {selected}
                 </div>
             </div>
         )

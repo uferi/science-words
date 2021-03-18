@@ -56,6 +56,11 @@ class Login extends Component {
         // this.props.fetchUserProfiles();
     }
 
+    onPasswordKeyDown = (event) => {
+         if(event.key==='Enter'){
+             this.onSignInHandler();
+         }        
+    }
 
     render() {
 
@@ -87,7 +92,8 @@ class Login extends Component {
                     <input 
                         className={classes.PasswordInput} 
                         type="password" 
-                        onChange={this.onPasswordChangedHandler}
+                        onChange={this.onPasswordChangedHandler} 
+                        onKeyDown={this.onPasswordKeyDown}
                         value={this.state.password}
                     />
                 </div>
