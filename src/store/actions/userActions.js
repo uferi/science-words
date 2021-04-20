@@ -35,7 +35,6 @@ export const userMessageSet = (newMessage) => {
 }
 
 export const userMessageClear = () => {
-    console.log('[MessageClear]-dispatched');
     return {
         type: actionTypes.USER_MESSAGE_CLEAR
     }

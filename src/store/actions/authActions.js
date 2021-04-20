@@ -154,3 +154,59 @@ export const authLogout = () => {
         type: actionTypes.AUTH_LOGOUT
     }
 }
+
+
+//------------------------------ PASSWORD RESET ----------------------------------------
+
+export const authPasswordReset = (data) => {
+    return dispatch => {
+
+        const urlPasswordReset = 'https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyDDca137usYug1VKuQ59J6keqheUOeJCrI';
+
+        const payload = {
+            requestType: 'PASSWORD_RESET',
+            email: data.email
+        }
+
+        dispatch(authPasswordResetStart());
+
+        axios.post( urlPasswordReset, payload)
+            .then( response => {
+                // console.log(response);
+                dispatch(actions.userMessageSet({
+                    message: 'Email was sent successfully to:',
+                    detail: response.data.email,
+                    isError: false
+                }))
+                dispatch(authPasswordResetSuccess());
+            })
+            .catch( error => {
+                // console.log(error);
+                dispatch(actions.userMessageSet({
+                    message: 'Something went wrong with Password Reset!',
+                    detail: error.toString(),
+                    isError: true
+                }))
+                dispatch(authPasswordResetFail());
+            })
+
+    }
+}
+
+export const authPasswordResetStart = () => {
+    return {
+        type: actionTypes.AUTH_PASSWORD_RESET_START
+    }
+}
+
+export const authPasswordResetSuccess = () => {
+    return {
+        type: actionTypes.AUTH_PASSWORD_RESET_SUCCESS
+    }
+}
+
+export const authPasswordResetFail = () => {
+    return {
+        type: actionTypes.AUTH_PASSWORD_RESET_FAIL
+    }
+}

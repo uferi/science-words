@@ -31,7 +31,7 @@ const userMessageSet = (state,action) => {
 
     return {
         ...state,
-        messages: currentMessages
+        messages: [...currentMessages]
     }
 }
 

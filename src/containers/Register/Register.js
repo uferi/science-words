@@ -154,7 +154,7 @@ class Register extends Component {
                         value={this.state.passwordAgain}
                     />
                 </div>
-                <div className={classes.ShowPassword} onClick={this.onShowPasswordHandler}>Show Password</div>
+                <div className={classes.ShowPassword} onClick={this.onShowPasswordHandler}>Show Passwords</div>
                 <button className={classes.Button} onClick={this.onRegisterHandler}>Register</button>
                 <div>
                     <p>If you have an account already: </p>

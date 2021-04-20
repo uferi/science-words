@@ -7,6 +7,7 @@ import classes from './Login.module.css';
 import * as actions from '../../store/actions/index';
 
 import MessageModal from '../MessageModal/MessageModal';
+import PasswordResetModal from './PasswordResetModal/PasswordResetModal';
 
 class Login extends Component {
     state = {
@@ -14,7 +15,8 @@ class Login extends Component {
         email: '',
         password: '',
         isSignup: false,
-        showPassword: false
+        showPassword: false,
+        resetPasswordModal: false
     }
 
     componentDidMount(){
@@ -69,6 +71,16 @@ class Login extends Component {
         this.setState({showPassword: !this.state.showPassword});
     }
 
+    onForgotPasswordHandler = () => {
+        // console.log('Forgot password - huh?');
+        this.setState({resetPasswordModal: true});
+    }
+
+    onForgotPasswordCancelHandler = () => {
+        // console.log('False alarm - huh?');
+        this.setState({resetPasswordModal: false});
+    }
+
     render() {
 
         const spinner = (
@@ -79,9 +91,19 @@ class Login extends Component {
             </div>
         )
 
+        let resetModal = null;
+        if (this.state.resetPasswordModal){
+            resetModal = (
+                <PasswordResetModal
+                    email={this.state.email} 
+                    onCancel={this.onForgotPasswordCancelHandler} />
+            )
+        }
+
         return (
             <div className={classes.Login}>
                 <MessageModal />
+                {resetModal}
                 <div className={classes.Title}>
                     <h3>Please Sign In!</h3>
                     {this.props.isLoading ? spinner : null}
@@ -107,6 +129,7 @@ class Login extends Component {
                 </div>
                 <div className={classes.ShowPassword} onClick={this.onShowPasswordHandler}>Show Password</div>
                 <button className={classes.Button} onClick={this.onSignInHandler}>Sign In</button>
+                <div className={classes.ForgotPassword} onClick={this.onForgotPasswordHandler}>(Oh man! - I Forgot My Password!)</div>
                 <div>
                     <p>Don't have an account yet?</p>
                     {/* <a href="#" >Register now</a> */}

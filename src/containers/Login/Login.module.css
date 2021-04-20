@@ -88,6 +88,28 @@
     user-select: none;
 }
 
+.ForgotPassword {
+    /* outline: 1px solid red; */
+    /* width: fit-content; */
+    margin-left: 17px;
+    /* margin-left: 235px; */
+    color: hsl(192, 43%, 57%);
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 10px;
+    /* transform: translateY(-10px); */
+    cursor: pointer;
+    user-select: none;
+}
+
+.ForgotPassword:hover {
+    color: hsl(192, 43%, 75%);
+}
+
+.ForgotPassword:active {
+    color: hsl(192, 43%, 40%);
+}
+
 .ShowPassword:hover {
     color: hsl(192, 43%, 75%);
 }

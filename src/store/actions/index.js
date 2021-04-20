@@ -18,7 +18,8 @@ export {
     authStart,
     authSuccess,
     authFail,
-    authLogout
+    authLogout,
+    authPasswordReset
 } from './authActions';
 
 export {
