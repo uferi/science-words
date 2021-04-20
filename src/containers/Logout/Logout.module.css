@@ -2,11 +2,11 @@
     display: flex;
     flex-direction: column;
     width: 550px;
+    /* border-radius: 15px 15px 5px 5px; */
+    margin-top: 60px;
     color: rgb(98, 173, 192);
     background-color: hsl(180, 26%, 21%);
-    /* border-radius: 15px 15px 5px 5px; */
     border-radius: 15px;
-    margin-top: 60px;
     user-select: none;
     border: 2px solid rgb(33, 56, 56);
     align-items: center;

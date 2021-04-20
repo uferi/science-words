@@ -90,6 +90,26 @@
     background-color: hsl(210, 25%, 70%);
 }
 
+.ShowPassword {
+    /* outline: 1px solid red; */
+    width: fit-content;
+    /* margin-left: 17px; */
+    margin-left: 235px;
+    color: rgb(98, 173, 192);
+    font-size: 14px;
+    transform: translateY(-10px);
+    cursor: pointer;
+    user-select: none;
+}
+
+.ShowPassword:hover {
+    color: hsl(192, 43%, 75%);
+}
+
+.ShowPassword:active {
+    color: hsl(192, 43%, 40%);
+}
+
 .Button {
     width: 90%;
     font-size: 1em;
@@ -101,6 +121,7 @@
     background-color: rgb(61, 144, 165);
     outline: none;
     box-shadow: none;
+    cursor: pointer;
 }
 
 .Button:hover {

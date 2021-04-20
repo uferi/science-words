@@ -6,6 +6,7 @@
     margin-top: 60px;
     text-align: center;
     background-color: rgb(33, 56, 56);
+    user-select: none;
 }
 
 .Login .Title {
@@ -74,6 +75,27 @@
 .Login input:focus {
     background-color: hsl(210, 25%, 70%);
 }
+
+.ShowPassword {
+    /* outline: 1px solid red; */
+    width: fit-content;
+    /* margin-left: 17px; */
+    margin-left: 235px;
+    color: hsl(192, 43%, 57%);
+    font-size: 14px;
+    transform: translateY(-10px);
+    cursor: pointer;
+    user-select: none;
+}
+
+.ShowPassword:hover {
+    color: hsl(192, 43%, 75%);
+}
+
+.ShowPassword:active {
+    color: hsl(192, 43%, 40%);
+}
+
 
 .Button {
     width: 90%;

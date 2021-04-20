@@ -6,12 +6,15 @@ import classes from './Login.module.css';
 
 import * as actions from '../../store/actions/index';
 
+import MessageModal from '../MessageModal/MessageModal';
+
 class Login extends Component {
     state = {
         nickName: '',
         email: '',
         password: '',
-        isSignup: false
+        isSignup: false,
+        showPassword: false
     }
 
     componentDidMount(){
@@ -62,6 +65,10 @@ class Login extends Component {
          }        
     }
 
+    onShowPasswordHandler = () => {
+        this.setState({showPassword: !this.state.showPassword});
+    }
+
     render() {
 
         const spinner = (
@@ -74,6 +81,7 @@ class Login extends Component {
 
         return (
             <div className={classes.Login}>
+                <MessageModal />
                 <div className={classes.Title}>
                     <h3>Please Sign In!</h3>
                     {this.props.isLoading ? spinner : null}
@@ -91,12 +99,13 @@ class Login extends Component {
                     <label>password:</label>
                     <input 
                         className={classes.PasswordInput} 
-                        type="password" 
+                        type={this.state.showPassword ? "test" : "password"} 
                         onChange={this.onPasswordChangedHandler} 
                         onKeyDown={this.onPasswordKeyDown}
                         value={this.state.password}
                     />
                 </div>
+                <div className={classes.ShowPassword} onClick={this.onShowPasswordHandler}>Show Password</div>
                 <button className={classes.Button} onClick={this.onSignInHandler}>Sign In</button>
                 <div>
                     <p>Don't have an account yet?</p>

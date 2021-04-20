@@ -67,7 +67,7 @@ class Toplist extends Component {
                     value = entry.allAnswers;
                     break;
                 case 'RATIO':
-                    if(entry.allAnswers>0){
+                    if(entry.allAnswers>0 && entry.goodAnswers>0){
                         value = (entry.goodAnswers/entry.allAnswers).toFixed(3);
                     }else{
                         value = 0;

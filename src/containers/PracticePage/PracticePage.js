@@ -148,7 +148,7 @@ const mapSateToProps = state => {
     }
 }
 
-const mapReducerToProps = dispatch => {
+const mapDispatchToProps = dispatch => {
     return {
         fetchWords: () => dispatch(actions.fetchWords()),
         updateUserProfile: (newProfile) => dispatch(actions.updateUserProfile(newProfile)),
@@ -156,4 +156,4 @@ const mapReducerToProps = dispatch => {
     }
 }
 
-export default connect(mapSateToProps,mapReducerToProps)(PracticePage);
+export default connect(mapSateToProps,mapDispatchToProps)(PracticePage);

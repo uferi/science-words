@@ -24,3 +24,20 @@ export const userInitProfile = (profileData) => {
 
     }
 }
+
+//------------------------------ MESSAGE ------------------------------
+
+export const userMessageSet = (newMessage) => {
+    return {
+        type: actionTypes.USER_MESSAGE_SET,
+        newMessage: newMessage
+    }
+}
+
+export const userMessageClear = () => {
+    console.log('[MessageClear]-dispatched');
+    return {
+        type: actionTypes.USER_MESSAGE_CLEAR
+    }
+}
+

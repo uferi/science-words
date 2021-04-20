@@ -1,6 +1,8 @@
 export{
     userTestAction,
     userInitProfile,
+    userMessageSet,
+    userMessageClear
 } from './userActions';
 
 export {

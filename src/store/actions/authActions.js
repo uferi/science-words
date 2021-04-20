@@ -35,6 +35,11 @@ export const authSignIn = (data) => {
         })
         .catch(error => {
             dispatch(authFail(error));
+            dispatch(actions.userMessageSet({
+                message: 'Bad Email or Password !',
+                detail: error.toString(),
+                isError: true
+            }))
         })
     }
 }
@@ -76,17 +81,32 @@ export const authSignUp = (data) => {
     
             axios.post( urlUpdate, userData)
             .then( response => {
+                dispatch(actions.userMessageSet({
+                    message: 'User Successfully Created!',
+                    detail: 'User is Activated. You can log in immediately with email: ' + data.email,
+                    isError: false
+                }))
                 dispatch(authSignUpSuccess());
                 data.history.push('/auth');
             })
             .catch( error => {
-                console.log(error);
+                // console.log(error);
+                dispatch(actions.userMessageSet({
+                    message: 'Something went wrong with nickName update!',
+                    detail: error.toString(),
+                    isError: true
+                }))
                 dispatch(authSignUpFail());
             })
 
         })
         .catch(error => {
-            console.log(error);
+            // console.log(error);
+            dispatch(actions.userMessageSet({
+                    message: 'Something went wrong! - Check All The Fields Please!',
+                    detail: error.toString(),
+                    isError: true
+                }))
             dispatch(authSignUpFail());
         })
     }

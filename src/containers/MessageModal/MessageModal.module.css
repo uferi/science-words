@@ -1,0 +1,118 @@
+.MainContainer {
+    /* outline: 1px solid red; */
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 600;
+}
+
+.MessageModal {
+    /* outline: 1px solid orange; */
+    /* width: 300px; */
+    /* height: 200px; */
+    max-width: 90vw;
+    max-height: 80vh;
+    color: rgb(98, 173, 192);
+    background-color: hsl(180, 26%, 21%);
+    border-radius: 15px;
+    user-select: none;
+    border: 2px solid rgb(33, 56, 56);
+    box-shadow: 5px 5px 50px hsla(0, 0%, 0%, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.MessageModal.Error {
+    background-color: hsl(0, 25%, 25%);
+    border: 2px solid hsl(0, 50%, 18%);
+}
+
+.Title {
+    /* outline: 1px solid green; */
+    box-sizing: border-box;
+    background-color: rgb(33, 56, 56);
+    border-radius: 10px 10px 0px 0px;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+    height: 50px;
+    line-height: 35px;
+}
+
+.Title.Error {
+    background-color: hsl(0, 50%, 18%);
+}
+
+.Message {
+    /* outline: 1px solid green; */
+    box-sizing: border-box;
+    font-size: 24px;
+    width: 100%;
+    padding: 25px 60px;
+    border-bottom: 2px solid rgb(33, 56, 56);
+    text-align: center;
+}
+
+.Message.Error {
+    border-bottom: 2px solid hsl(0, 50%, 17%);
+}
+
+.Detail {
+    /* outline: 1px solid orange; */
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px 60px;
+
+}
+
+.Footer {
+    /* outline: 1px solid orange; */
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(33, 56, 56);
+    height: 50px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.Footer.Error {
+    background-color: hsl(0, 50%, 18%);
+}
+
+.Button {
+    /* outline: 1px solid orange; */
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    width: 50px;
+    height: 30px;
+    color: hsl(180, 26%, 10%);
+    background-color: hsl(192, 43%, 50%);
+    padding: 0px 30px;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+.Button:hover {
+    /* background-color: rgb(33, 56, 56); */
+    color: hsl(192, 43%, 15%);
+    background-color: hsl(192, 43%, 62%);
+}
+
+.Button:active {
+    color: hsl(180, 26%, 15%);
+    background-color: hsl(180, 26%, 80%);
+}
+

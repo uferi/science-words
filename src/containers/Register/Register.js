@@ -6,6 +6,8 @@ import classes from './Register.module.css';
 
 import * as actions from '../../store/actions/index';
 
+import MessageModal from '../MessageModal/MessageModal';
+
 class Register extends Component {
     state = {
         nickName: '',
@@ -15,7 +17,8 @@ class Register extends Component {
         passwordTouched: false,
         passwordAgainTouched: false,
         passwordMismatch: false,
-        isSignup: true
+        isSignup: true,
+        showPassword: false
     }
 
     onNickNameChangedHandler = (event) => {
@@ -87,6 +90,10 @@ class Register extends Component {
         // console.log(this.state);
     }
 
+    onShowPasswordHandler = () => {
+        this.setState({showPassword: !this.state.showPassword});
+    }
+
     render() {
 
         // this.props.onTestUserAction('Yay! I managed to send a message through redux to dispatch it with actions!');
@@ -102,14 +109,15 @@ class Register extends Component {
 
         return (
             <div className={classes.Register}>
+                <MessageModal />
                 <div className={classes.Title}>
                     <h3>Register New User!</h3>
                     {this.props.isLoading ? spinner : null}
                 </div>
-                <div className={classes.Info}>
+                {/* <div className={classes.Info}>
                     ( After successful registration activation email won't be sent. 
                     The account is active immediately<br/>
-                    - You can sign in right away. )</div>
+                    - You can sign in right away. )</div> */}
                 <div>
                     <label>nickname:</label>
                     <input 
@@ -132,7 +140,7 @@ class Register extends Component {
                     <label className={(this.state.passwordMismatch && !this.state.passwordTouched)? classes.Mismatch : null}>password (min.6-digits) :</label>
                     <input 
                         className={classes.PasswordInput} 
-                        type="password" 
+                        type={this.state.showPassword ? "test" : "password"} 
                         onChange={this.onPasswordChangedHandler} 
                         value={this.state.password}
                     />
@@ -141,11 +149,12 @@ class Register extends Component {
                     <label className={(this.state.passwordMismatch && !this.state.passwordAgainTouched)? classes.Mismatch : null}>password again:</label>
                     <input 
                         className={classes.PasswordInput} 
-                        type="password" 
+                        type={this.state.showPassword ? "test" : "password"} 
                         onChange={this.onPasswordAgainChangedHandler} 
                         value={this.state.passwordAgain}
                     />
                 </div>
+                <div className={classes.ShowPassword} onClick={this.onShowPasswordHandler}>Show Password</div>
                 <button className={classes.Button} onClick={this.onRegisterHandler}>Register</button>
                 <div>
                     <p>If you have an account already: </p>
