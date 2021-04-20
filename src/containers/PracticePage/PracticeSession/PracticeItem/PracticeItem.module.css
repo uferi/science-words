@@ -10,7 +10,11 @@
 
 .Id {
     /* outline: 1px solid darkgreen; */
-    width: 31px;
+    box-sizing: border-box;
+    font-size: 15px;
+    line-height: 35px;
+    width: 45px;
+    /* width: 31px; */
     text-align: center;
     padding-top: 2px;
     border-right: 1px solid hsl(180, 26%, 17%);
@@ -108,7 +112,7 @@
   position: relative;
   display: inline-block;
   height: 100%;
-  //border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
 /* Tooltip text */

@@ -17,7 +17,7 @@ class SetupItem extends Component {
         return (
             <div className={rootClasses.join(' ')} onClick={()=>this.props.clicked()}>
                 <div className={classes.Id}>
-                    {this.props.item.id}.
+                    {this.props.item.id}
                 </div>
                 <div className={classes.WordPair}>
                     <div className={classes.Eng}>

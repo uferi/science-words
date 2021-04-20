@@ -21,7 +21,9 @@
 
 .Id {
     /* outline: 1px solid darkgreen; */
-    width: 30px;
+    font-size: 15px;
+    line-height: 35px;
+    width: 42px;
     text-align: center;
     padding-top: 2px;
     border-right: 1px solid hsl(180, 26%, 17%);
