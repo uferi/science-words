@@ -88,7 +88,7 @@ class PracticePage extends Component {
                     timeSpent: timeElapsed
         }
 
-        if(this.props.weeklyStat){
+        if(this.props.weeklyStat !== null){
             if( this.props.weeklyStat[this.props.currentWeek] &&
                 this.props.weeklyStat[this.props.currentWeek][this.props.localId] ) {
                     newWeeklyStat = null;
