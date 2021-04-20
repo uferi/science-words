@@ -86,16 +86,19 @@ class PracticePage extends Component {
                     displayName: this.props.displayName,
                     goodAnswers: goodAnswers,
                     timeSpent: timeElapsed
-                    }
-
-        if( this.props.weeklyStat[this.props.currentWeek] &&
-            this.props.weeklyStat[this.props.currentWeek][this.props.localId] ) {
-                newWeeklyStat = null;
-                newWeeklyStat = {...this.props.weeklyStat[this.props.currentWeek][this.props.localId]};
-                newWeeklyStat.allAnswers += allAnswers;
-                newWeeklyStat.goodAnswers += goodAnswers;
-                newWeeklyStat.timeSpent += timeElapsed;
         }
+
+        if(this.props.weeklyStat){
+            if( this.props.weeklyStat[this.props.currentWeek] &&
+                this.props.weeklyStat[this.props.currentWeek][this.props.localId] ) {
+                    newWeeklyStat = null;
+                    newWeeklyStat = {...this.props.weeklyStat[this.props.currentWeek][this.props.localId]};
+                    newWeeklyStat.allAnswers += allAnswers;
+                    newWeeklyStat.goodAnswers += goodAnswers;
+                    newWeeklyStat.timeSpent += timeElapsed;
+            }
+        }
+
         data = {
             localId: this.props.localId,
             currentWeek: this.props.currentWeek,
